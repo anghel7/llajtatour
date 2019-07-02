@@ -1,1 +1,12 @@
-<p>paquete-lista works!</p>
+<h1>Lista de paquetes turisticos</h1>
+<h4>{{ departamento }}</h4>
+<h4 [innerHtml]="departamento"></h4>
+<ul>
+    <li *ngFor="let lugar of lugares">{{ lugar }}</li>
+</ul>
+
+<button (click)="verInfo()" disabled="true">Ver Info</button>
+<br>
+<input type="text" [value]="departamento">
+<input type="text" value="departamento">
+<button [value]="departamento"></button>
