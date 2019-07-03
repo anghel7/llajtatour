@@ -7,9 +7,10 @@ import { PaqueteItemComponent } from './paquete-item/paquete-item.component';
 import { PaqueteCrearComponent } from './paquete-crear/paquete-crear.component';
 import { PaqueteEditarComponent } from './paquete-editar/paquete-editar.component';
 import { PaqueteEliminarComponent } from './paquete-eliminar/paquete-eliminar.component';
+import { PaqueteDetalleComponent } from './paquete-detalle/paquete-detalle.component';
 
 @NgModule({
-  declarations: [PaqueteListaComponent, PaqueteItemComponent, PaqueteCrearComponent, PaqueteEditarComponent, PaqueteEliminarComponent],
+  declarations: [PaqueteListaComponent, PaqueteItemComponent, PaqueteCrearComponent, PaqueteEditarComponent, PaqueteEliminarComponent, PaqueteDetalleComponent],
   imports: [
     CommonModule,
     PaqueteRoutingModule

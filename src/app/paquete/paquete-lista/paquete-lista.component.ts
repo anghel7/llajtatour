@@ -7,20 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaqueteListaComponent implements OnInit {
 
-  departamento:String;
+  titulo:string;
 
   lugares:string[];
 
   constructor() {
-    this.lugares = ["Cristo", "Pairumani", "Liruini"];
-    this.departamento="La Paz";
+    this.titulo="Nuestros destinos";
+    this.lugares = ["Cristo", "Pairumani", "Liruini"];    
   }
 
   ngOnInit() {
-  }
-
-  verInfo():void{
-    this.departamento = "Cochabamba";
   }
 
 }
