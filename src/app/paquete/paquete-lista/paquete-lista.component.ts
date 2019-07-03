@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Paquete } from "../../shared/models/paquete";
 
 @Component({
   selector: 'app-paquete-lista',
@@ -9,11 +10,52 @@ export class PaqueteListaComponent implements OnInit {
 
   titulo:string;
 
-  lugares:string[];
+  lugares:Paquete[];
 
   constructor() {
-    this.titulo="Nuestros destinos";
-    this.lugares = ["Cristo", "Pairumani", "Liruini"];    
+    this.titulo="Nuestros destinos"; 
+    this.lugares = [
+      {
+        id:1,
+        destino:'Liruini',
+        descripcion:'Este es un paquete .......',
+        precio:100,
+        guia:'Nelso Morante',
+        fechaPartida:'May 27, 2019'
+      },
+      {
+        id:2,
+        destino:'Pairumani',
+        descripcion:'Este es un paquete .......',
+        precio:100,
+        guia:'Nelso Morante',
+        fechaPartida:'May 27, 2019'
+      },
+      {
+        id:3,
+        destino:'Chinaota',
+        descripcion:'Este es un paquete .......',
+        precio:100,
+        guia:'Nelso Morante',
+        fechaPartida:'May 27, 2019'
+      },
+      {
+        id:4,
+        destino:'Villa tunari',
+        descripcion:'Este es un paquete .......',
+        precio:100,
+        guia:'Nelso Morante',
+        fechaPartida:'May 27, 2019'
+      },
+      {
+        id:5,
+        destino:'Toro Toro',
+        descripcion:'Este es un paquete .......',
+        precio:100,
+        guia:'Nelso Morante',
+        fechaPartida:'May 27, 2019'
+      }
+    ]; 
   }
 
   ngOnInit() {

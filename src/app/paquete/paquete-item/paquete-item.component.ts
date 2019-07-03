@@ -1,13 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Paquete } from '../../shared/models/paquete';
 
 @Component({
-  selector: 'app-paquete-item',
+  selector: 'app-paquete-item',//<app-paquete-item></app-paquete-item>
   templateUrl: './paquete-item.component.html',
   styleUrls: ['./paquete-item.component.css']
 })
 export class PaqueteItemComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  paquete:Paquete;
+
+  constructor() {
+    /**
+     * this.paquete = {
+      id:1
+      .....
+      .....
+    };
+     */
+   }
 
   ngOnInit() {
   }

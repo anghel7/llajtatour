@@ -1,6 +1,7 @@
 export class Paquete {
     id:number;
     destino:string;
+    descripcion:string;
     precio:number;
     guia:string;
     fechaPartida:string;
