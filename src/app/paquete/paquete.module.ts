@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { PaqueteRoutingModule } from './paquete-routing.module';
 import { PaqueteListaComponent } from './paquete-lista/paquete-lista.component';
@@ -13,7 +14,8 @@ import { PaqueteDetalleComponent } from './paquete-detalle/paquete-detalle.compo
   declarations: [PaqueteListaComponent, PaqueteItemComponent, PaqueteCrearComponent, PaqueteEditarComponent, PaqueteEliminarComponent, PaqueteDetalleComponent],
   imports: [
     CommonModule,
-    PaqueteRoutingModule
+    PaqueteRoutingModule,
+    FormsModule
   ]
 })
 export class PaqueteModule { }

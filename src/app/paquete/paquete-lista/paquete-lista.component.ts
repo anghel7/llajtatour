@@ -12,8 +12,13 @@ export class PaqueteListaComponent implements OnInit {
 
   lugares:Paquete[];
 
+  elementoBusqueda:string;
+
   constructor() {
     this.titulo="Nuestros destinos"; 
+
+    this.elementoBusqueda = "Ingrese una palabra";
+
     this.lugares = [
       {
         id:1,
@@ -59,6 +64,10 @@ export class PaqueteListaComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  busccarElementos():void{
+    console.log(this.elementoBusqueda);    
   }
 
 }
