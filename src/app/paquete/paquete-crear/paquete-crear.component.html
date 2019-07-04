@@ -1,16 +1,18 @@
-<form>
+<form [formGroup]="form" (submit)="crearPaquete()">
     <label>Destino</label>
-    <input type="text" name="destino">
+    <input formControlName="destino" type="text" name="destino">
     <br>
     <label>Descripcion</label>
-    <input type="text" name="descripcion">
+    <input formControlName="descripcion" type="text" name="descripcion">
     <br>
     <label>Precio</label>
-    <input type="number" name="precio">
+    <input formControlName="precio" type="number" name="precio">
     <br>
     <label>Guia</label>
-    <input type="text" name="guia">
+    <input formControlName="guia" type="text" name="guia">
     <br>
     <label>Fecha partida</label>
-    <input type="date" name="fechapartida">
+    <input formControlName="fechaPartida" type="date" name="fechapartida">
+
+    <input type="submit" value="Aceptar" [disabled]="form.invalid">
 </form>

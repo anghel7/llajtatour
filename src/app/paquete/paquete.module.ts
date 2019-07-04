@@ -9,13 +9,15 @@ import { PaqueteCrearComponent } from './paquete-crear/paquete-crear.component';
 import { PaqueteEditarComponent } from './paquete-editar/paquete-editar.component';
 import { PaqueteEliminarComponent } from './paquete-eliminar/paquete-eliminar.component';
 import { PaqueteDetalleComponent } from './paquete-detalle/paquete-detalle.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PaqueteListaComponent, PaqueteItemComponent, PaqueteCrearComponent, PaqueteEditarComponent, PaqueteEliminarComponent, PaqueteDetalleComponent],
   imports: [
     CommonModule,
     PaqueteRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PaqueteModule { }
