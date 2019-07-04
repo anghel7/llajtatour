@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 //import { FormBuilder } from '@angular/forms';
 //import {  FormGroup } from '@angular/forms';
 
@@ -16,11 +16,11 @@ export class PaqueteCrearComponent implements OnInit {
   constructor(private fBuilder:FormBuilder) {
     this.form = this.fBuilder.group(
       {
-        destino:[""],
-        descripcion:[""],
-        precio:[0],
-        guia:[""],
-        fechaPartida:[""]
+        destino:["",[Validators.required]],//min 5 caracteres, max 10 caracteres
+        descripcion:["",[Validators.required]],//min 5 caracteres, max 100 caracteres
+        precio:[0, [Validators.required]],//min 0, max 1000000
+        guia:["", [Validators.required]],//min 5 caracteres, max 50 caracteres
+        fechaPartida:["", [Validators.required]]
       }
     );
   }
