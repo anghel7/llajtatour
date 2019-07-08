@@ -2,7 +2,7 @@
     <b>Destino: </b> {{paquete.destino}}
     <br>
     <b>Fecha: </b> {{paquete.fechaPartida}}
-    <button>Ver Detalle</button>
+    <button [routerLink]="['/paquetes','detalle', paquete.id]" >Ver Detalle</button>
     <button>Editar</button>
     <button>Eliminar</button>
 </p>

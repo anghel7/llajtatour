@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PaqueteService } from '../../shared/services/paquete.service';
+import { Router } from '@angular/router';
 //import { FormBuilder } from '@angular/forms';
 //import {  FormGroup } from '@angular/forms';
 
@@ -14,7 +15,10 @@ export class PaqueteCrearComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fBuilder: FormBuilder, private paqueteservice: PaqueteService) {
+  constructor(
+    private fBuilder: FormBuilder, 
+    private paqueteservice: PaqueteService,
+    private router:Router) {
     this.form = this.fBuilder.group(
       {
         destino: ["", [Validators.required]],//min 5 caracteres, max 10 caracteres
@@ -34,7 +38,9 @@ export class PaqueteCrearComponent implements OnInit {
       .subscribe(
         //exito
         (respuesta) => {
-          console.log('Respuesta del servidor: ', respuesta);
+          //redireccione a listar paquetes si se creo el paqute
+          this.router.navigate(['paquetes','lista']);
+          //this.router.navigate(['/paquetes/lista']);
         },
         //fracaso
         (error) => {

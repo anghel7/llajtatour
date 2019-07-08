@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-paquete-detalle',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaqueteDetalleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedroute:ActivatedRoute) { }
 
   ngOnInit() {
+    //Observable
+    this.activatedroute.params
+      .subscribe(
+        (params) => {
+          console.log('Paramas repuerado: ', params);
+          
+         },
+        (error) => {
+          console.log('Error al recuperar params');          
+        }
+      );
   }
 
 }

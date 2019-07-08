@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PaqueteListaComponent } from './paquete-lista/paquete-lista.component'
 import { PaqueteCrearComponent } from './paquete-crear/paquete-crear.component';
+import { PaqueteDetalleComponent } from './paquete-detalle/paquete-detalle.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path:'crear',
     component: PaqueteCrearComponent
+  },
+  {
+    path:'detalle/:id',
+    component: PaqueteDetalleComponent
   }
 ];
 

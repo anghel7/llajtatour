@@ -9,7 +9,7 @@ import { Paquete } from '../../shared/models/paquete';
 export class PaqueteItemComponent implements OnInit {
 
   @Input()
-  paquete:Paquete;
+  paquete: Paquete;
 
   constructor() {
     /**
@@ -19,9 +19,9 @@ export class PaqueteItemComponent implements OnInit {
       .....
     };
      */
-   }
+  }
 
-  ngOnInit() {
+  ngOnInit() {    
   }
 
 }
