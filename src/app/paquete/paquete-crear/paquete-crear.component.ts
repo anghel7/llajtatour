@@ -47,6 +47,10 @@ export class PaqueteCrearComponent implements OnInit {
       );
   }
 
+  reiniciarForm():void{
+    this.form.reset();
+  }
+
 
   /*Sim Di
   servA:ServicioA;

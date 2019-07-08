@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Paquete } from "../../shared/models/paquete";
+import { PaqueteService } from 'src/app/shared/services/paquete.service';
 
 @Component({
   selector: 'app-paquete-lista',
@@ -8,66 +9,34 @@ import { Paquete } from "../../shared/models/paquete";
 })
 export class PaqueteListaComponent implements OnInit {
 
-  titulo:string;
+  titulo: string;
 
-  lugares:Paquete[];
+  lugares: Paquete[];
 
-  elementoBusqueda:string;
-
-  constructor() {
-    this.titulo="Nuestros destinos"; 
+  elementoBusqueda: string;
+  //Primer ciclo
+  constructor(private paqueteservice: PaqueteService) {
+    this.titulo = "Nuestros destinos";
 
     this.elementoBusqueda = "Ingrese una palabra";
 
-    this.lugares = [
-      {
-        id:1,
-        destino:'Liruini',
-        descripcion:'Este es un paquete .......',
-        precio:100,
-        guia:'Nelso Morante',
-        fechaPartida:'May 27, 2019'
-      },
-      {
-        id:2,
-        destino:'Pairumani',
-        descripcion:'Este es un paquete .......',
-        precio:100,
-        guia:'Nelso Morante',
-        fechaPartida:'May 27, 2019'
-      },
-      {
-        id:3,
-        destino:'Chinaota',
-        descripcion:'Este es un paquete .......',
-        precio:100,
-        guia:'Nelso Morante',
-        fechaPartida:'May 27, 2019'
-      },
-      {
-        id:4,
-        destino:'Villa tunari',
-        descripcion:'Este es un paquete .......',
-        precio:100,
-        guia:'Nelso Morante',
-        fechaPartida:'May 27, 2019'
-      },
-      {
-        id:5,
-        destino:'Toro Toro',
-        descripcion:'Este es un paquete .......',
-        precio:100,
-        guia:'Nelso Morante',
-        fechaPartida:'May 27, 2019'
-      }
-    ]; 
+    this.lugares = [];
   }
-
+  //Segundo Ciclo
   ngOnInit() {
+    this.paqueteservice.listarPaquetes()
+      .subscribe(
+        (respuesta)=>{
+          //console.log('Respuesta del servidor: ', respuesta);    
+          this.lugares = respuesta; 
+        },
+        (error)=>{
+          console.log('Error en el servidor: ', error);          
+        }
+      );
   }
 
-  busccarElementos():void{
-    console.log(this.elementoBusqueda);    
+  busccarElementos(): void {
+    console.log(this.elementoBusqueda);
   }
-
 }

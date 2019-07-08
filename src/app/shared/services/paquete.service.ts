@@ -15,6 +15,9 @@ export class PaqueteService {
     return this.httpclient.post<Paquete>("https://llajtatour.herokuapp.com/api/paquetes/",data);
   }
   /**Listar paquetes GET*/
+  listarPaquetes():Observable<Paquete[]>{
+    return this.httpclient.get<Paquete[]>("https://llajtatour.herokuapp.com/api/paquetes/");
+  }
   /**Recuperar paquete  por Id GET*/
   /**Editar paquete  por Id PUT*/
   /**Eliminar paquete  por Id DELETE*/
