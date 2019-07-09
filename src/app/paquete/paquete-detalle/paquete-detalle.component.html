@@ -1,24 +1,44 @@
 <h4>Detalle del paquete</h4>
-<table border="1">
-    <tr>
-        <td><strong>Destino:</strong></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><strong>Descripcion:</strong></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><strong>Precio:</strong></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><strong>Guia:</strong></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><strong>Fecha Partida:</strong></td>
-        <td></td>
-    </tr>
-</table> 
+<!--
+    true
+    false
+    1   true
+    >1  true
+    0   false
+    <0  false
+    undefinded   false
+    object       true
+-->
+<table border="1" *ngIf="paquete">
+  <tr>
+    <td><strong>Destino:</strong></td>
+    <td>{{ paquete.destino | uppercase }}</td>
+  </tr>
+  <tr>
+    <td><strong>Descripcion:</strong></td>
+    <td>{{ paquete.descripcion }}</td>
+  </tr>
+  <tr>
+    <td><strong>Precio:</strong></td>
+    <td>{{ paquete.precio }}</td>
+  </tr>
+  <tr>
+    <td><strong>Guia:</strong></td>
+    <td>{{ paquete.guia }}</td>
+  </tr>
+  <tr>
+    <td><strong>Fecha Partida:</strong></td>
+    <td>{{ paquete.fechaPartida | date:'medium' }}</td>
+  </tr>
+
+  <tr>
+    <td><strong>time stamp:</strong></td>
+    <td>{{ '1911288615' | date:'medium' }}</td>
+  </tr>
+
+  <tr>
+    <td><strong>iso 8601:</strong></td>
+    <td>{{ '2019-07-09T15:44:00.882Z' | date:'short' }}</td>
+  </tr>
+</table>
 <br>

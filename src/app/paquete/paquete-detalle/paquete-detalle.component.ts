@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PaqueteService } from 'src/app/shared/services/paquete.service';
+import { Paquete } from 'src/app/shared/models/paquete';
 
 
 @Component({
@@ -9,6 +10,8 @@ import { PaqueteService } from 'src/app/shared/services/paquete.service';
   styleUrls: ['./paquete-detalle.component.css']
 })
 export class PaqueteDetalleComponent implements OnInit {
+
+  paquete: Paquete;
 
   constructor(private activatedroute: ActivatedRoute,
     private paqueteservice: PaqueteService) { }
@@ -20,11 +23,11 @@ export class PaqueteDetalleComponent implements OnInit {
         (params) => {
           this.paqueteservice.recuperarPaqueteId(params.id)
             .subscribe(
-              (response)=>{
-                console.log("Paquete: ", response);                
+              (response) => {
+                this.paquete = response;
               },
-              (error)=>{
-                console.log("error al recupera el paquete por id: ",error);                
+              (error) => {
+                console.log("error al recupera el paquete por id: ", error);
               }
             );
         },
@@ -33,5 +36,4 @@ export class PaqueteDetalleComponent implements OnInit {
         }
       );
   }
-
 }
