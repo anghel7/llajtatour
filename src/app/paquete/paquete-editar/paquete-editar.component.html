@@ -1,1 +1,20 @@
-<p>paquete-editar works!</p>
+<form [formGroup]="form" (submit)="editarPaquete()">
+  <label>Destino</label>
+  <input formControlName="destino" type="text" name="destino">
+  <br>
+  <label>Descripcion</label>
+  <input formControlName="descripcion" type="text" name="descripcion">
+  <br>
+  <label>Precio</label>
+  <input formControlName="precio" type="number" name="precio">
+  <br>
+  <label>Guia</label>
+  <input formControlName="guia" type="text" name="guia">
+  <br>
+  <label>Fecha partida</label>
+  <input formControlName="fechaPartida" type="date" name="fechapartida">
+  <br>
+  <button (click)="reiniciarForm()" type="button">Reiniciar Formulario</button>
+  <input type="submit" value="Aceptar" [disabled]="form.invalid">
+</form>
+<button routerLink="/paquetes/lista" type="button">Regresar a la lista</button>
