@@ -24,4 +24,7 @@ export class PaqueteService {
   }
   /**Editar paquete  por Id PUT*/
   /**Eliminar paquete  por Id DELETE*/
+  editarPaqueteId(id: any, paquete: any): Observable<Paquete> {
+    return this.httpclient.put<Paquete>("https://llajtatour.herokuapp.com/api/paquetes/" + id + "/", paquete);
+  }
 }
