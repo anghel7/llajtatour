@@ -10,11 +10,7 @@ import { PaqueteCrearComponent } from './paquete-crear/paquete-crear.component';
 import { PaqueteEditarComponent } from './paquete-editar/paquete-editar.component';
 import { PaqueteEliminarComponent } from './paquete-eliminar/paquete-eliminar.component';
 import { PaqueteDetalleComponent } from './paquete-detalle/paquete-detalle.component';
-
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [PaqueteListaComponent, PaqueteItemComponent, PaqueteCrearComponent, PaqueteEditarComponent, PaqueteEliminarComponent, PaqueteDetalleComponent],
@@ -23,11 +19,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     PaqueteRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule
-  ],
-  //providers: [MatDatepickerModule]
+    MaterialModule    
+  ]
 })
 export class PaqueteModule { }
