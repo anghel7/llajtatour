@@ -28,6 +28,6 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [MatDatepickerModule]
+  //providers: [MatDatepickerModule]
 })
 export class PaqueteModule { }
