@@ -5,6 +5,7 @@ export class Paquete {
     precio:number;
     guia:string;
     fechaPartida:string;
+    img_url:string;
 }
 /**
  * destino: 'Liruini',
