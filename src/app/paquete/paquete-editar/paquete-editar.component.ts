@@ -23,7 +23,8 @@ export class PaqueteEditarComponent implements OnInit {
         descripcion: ["", [Validators.required]],//min 5 caracteres, max 100 caracteres
         precio: [0, [Validators.required]],//min 0, max 1000000
         guia: ["", [Validators.required]],//min 5 caracteres, max 50 caracteres
-        fechaPartida: ["", [Validators.required]]
+        fechaPartida: ["", [Validators.required]],
+        img_url:[]
       }
     );
   }

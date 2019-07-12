@@ -7,4 +7,4 @@
 </form>
 <img [src]="imagen_url" alt="IMAGEN NO ENCONTRADA" height="100px">
 <!--                                            [input]             (output)-->
-<app-paquete-item *ngFor="let lugar of lugares" [paquete]="lugar"   (onover)="myMetodo($event)"></app-paquete-item>
+<app-paquete-item *ngFor="let lugar of lugares" [paquete]="lugar"   (over)="myMetodo($event)"></app-paquete-item>

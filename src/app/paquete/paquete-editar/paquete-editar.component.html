@@ -14,7 +14,12 @@
   <label>Fecha partida</label>
   <input formControlName="fechaPartida" type="date" name="fechapartida">
   <br>
+
+  <mat-form-field>
+    <input matInput placeholder="URL de la imagen" formControlName="img_url">
+  </mat-form-field>
+  <br>
   <button (click)="reiniciarForm()" type="button">Reiniciar Formulario</button>
-  <input type="submit" value="Aceptar" [disabled]="form.invalid">
+  <input type="submit" value="Aceptar" [disabled]="form.invalid || form.untouched">
 </form>
 <button routerLink="/paquetes/lista" type="button">Regresar a la lista</button>

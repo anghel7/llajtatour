@@ -12,7 +12,7 @@ export class PaqueteItemComponent implements OnInit {
   @Input()
   paquete: Paquete;
 
-  @Output()
+  @Output('over')
   onover: EventEmitter<string>;
 
   constructor() {

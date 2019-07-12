@@ -59,6 +59,11 @@ export class PaqueteCrearComponent implements OnInit {
   }
 
 
+  verificarCierre():void{
+    console.log("El DatePicker se cerro");
+    
+  }
+
   /*Sim Di
   servA:ServicioA;
   constructor() { 
