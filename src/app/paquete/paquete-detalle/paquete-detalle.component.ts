@@ -23,7 +23,7 @@ export class PaqueteDetalleComponent implements OnInit {
         (params) => {
           this.paqueteservice.recuperarPaqueteId(params.id)
             .subscribe(
-              (response) => {
+              (response) => {//objeto
                 this.paquete = response;
               },
               (error) => {

@@ -36,7 +36,7 @@ export class PaqueteEditarComponent implements OnInit {
         (params) => {//Recurperando el id del paquete
           this.paqueteservice.recuperarPaqueteId(params.id)
             .subscribe(
-              (response) => {//El paquete por id, Objeto paquete
+              (response) => {//El paquete por id, Objeto paquete {valq1: '', val2: ''}
                 this.form.setValue(response);
               },
               (error) => {
