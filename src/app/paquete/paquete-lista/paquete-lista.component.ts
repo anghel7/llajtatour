@@ -14,6 +14,8 @@ export class PaqueteListaComponent implements OnInit {
   lugares: Paquete[];
 
   elementoBusqueda: string;
+
+  imagen_url: string;
   //Primer ciclo
   constructor(private paqueteservice: PaqueteService) {
     this.titulo = "Nuestros destinos";
@@ -21,22 +23,30 @@ export class PaqueteListaComponent implements OnInit {
     this.elementoBusqueda = "Ingrese una palabra";
 
     this.lugares = [];
+    this.imagen_url = "";
   }
   //Segundo Ciclo
   ngOnInit() {
     this.paqueteservice.listarPaquetes()
       .subscribe(
-        (respuesta)=>{
+        (respuesta) => {
           //console.log('Respuesta del servidor: ', respuesta);    
-          this.lugares = respuesta; 
+          this.lugares = respuesta;
         },
-        (error)=>{
-          console.log('Error en el servidor: ', error);          
+        (error) => {
+          console.log('Error en el servidor: ', error);
         }
       );
   }
 
   busccarElementos(): void {
     console.log(this.elementoBusqueda);
+  }
+
+  myMetodo(event):void{
+    console.log("reciviendo informacion del componente hijo");
+    console.log(event);
+    this.imagen_url = event;
+    
   }
 }
