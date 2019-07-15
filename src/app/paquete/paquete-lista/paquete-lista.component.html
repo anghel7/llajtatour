@@ -2,9 +2,11 @@
 <button routerLink="/paquetes/crear" type="button">Crear Paqute</button>
 <form >
     <label>Buscar</label>
-    <input type="text" name="buscar" [(ngModel)]="elementoBusqueda">
+    <input type="text" name="buscar" [(ngModel)]="elementoBusqueda" (ngModelChange)="busccarElementos()">
+    <!--
     <button (click)="busccarElementos()">Aceptar</button>
+    -->
 </form>
 <img [src]="imagen_url" alt="IMAGEN NO ENCONTRADA" height="100px">
 <!--                                            [input]             (output)-->
-<app-paquete-item *ngFor="let lugar of lugares" [paquete]="lugar"   (over)="myMetodo($event)"></app-paquete-item>
+<app-paquete-item *ngFor="let lugar of lugaresBusqueda" [paquete]="lugar"   (over)="myMetodo($event)"></app-paquete-item>

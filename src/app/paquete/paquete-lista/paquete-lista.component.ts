@@ -11,7 +11,9 @@ export class PaqueteListaComponent implements OnInit {
 
   titulo: string;
 
-  lugares: Paquete[];
+  lugares: Paquete[];//lugares en el typescrip
+
+  lugaresBusqueda: Paquete[];//mostrar datos de busqueda
 
   elementoBusqueda: string;
 
@@ -20,9 +22,10 @@ export class PaqueteListaComponent implements OnInit {
   constructor(private paqueteservice: PaqueteService) {
     this.titulo = "Nuestros destinos";
 
-    this.elementoBusqueda = "Ingrese una palabra";
+    this.elementoBusqueda = "";
 
     this.lugares = [];
+    this.lugaresBusqueda = [];
     this.imagen_url = "";
   }
   //Segundo Ciclo
@@ -30,8 +33,8 @@ export class PaqueteListaComponent implements OnInit {
     this.paqueteservice.listarPaquetes()
       .subscribe(
         (respuesta) => {
-          //console.log('Respuesta del servidor: ', respuesta);    
           this.lugares = respuesta;
+          this.lugaresBusqueda = respuesta;
         },
         (error) => {
           console.log('Error en el servidor: ', error);
@@ -40,13 +43,16 @@ export class PaqueteListaComponent implements OnInit {
   }
 
   busccarElementos(): void {
-    console.log(this.elementoBusqueda);
+    this.lugaresBusqueda = this.lugares.filter(
+      (paquetelugar) => {
+        return paquetelugar.destino.includes(this.elementoBusqueda);
+      }
+    );    
   }
 
-  myMetodo(event):void{
-    console.log("reciviendo informacion del componente hijo");
+  myMetodo(event): void {
     console.log(event);
     this.imagen_url = event;
-    
   }
+
 }
